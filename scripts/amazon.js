@@ -1,6 +1,6 @@
 let productHTML = "";
 
-product.forEach((product) => {
+products.forEach((product) => {
   productHTML += `
    <div class="product-container">
           <div class="product-image-container">
