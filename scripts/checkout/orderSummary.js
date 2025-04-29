@@ -43,7 +43,7 @@ export function renderOrderSummary() {
                  ${matchingProduct.name}
                 </div>
                 <div class="product-price">
-                  $${formatCurrency(matchingProduct.priceCents)}
+               ${matchingProduct.getPrice()}
                 </div>
                 <div class="product-quantity
                 js-product-quantity-${matchingProduct.id}">
@@ -118,8 +118,7 @@ export function renderOrderSummary() {
 
   document.querySelector(".js-order-summary").innerHTML = cartSummaryHTML;
 
-  document.querySelectorAll(".js-delete-link")
-    .forEach((link) => {
+  document.querySelectorAll(".js-delete-link").forEach((link) => {
     link.addEventListener("click", () => {
       const productId = link.dataset.productId;
       removeFromCart(productId);
