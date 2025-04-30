@@ -36,7 +36,6 @@ class Product {
   }
 
   extraInfoHTML() {
-    super.extraInfoHTML();
     return "";
   }
 }
@@ -45,14 +44,15 @@ class Clothing extends Product {
   sizeChartLink;
 
   constructor(productDetails) {
-    // super(productDetails);
+    super(productDetails);
     this.sizeChartLink = productDetails.sizeChartLink;
   }
 
   extraInfoHTML() {
+    // super.extraInfoHTML();
     return `
-    <a href="${this.sizeChartLink}" target=_blank>
-       Size chart
+    <a href="${this.sizeChartLink}" target = "_blank">
+     Size chart
     </a>
     `;
   }
